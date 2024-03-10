@@ -1,0 +1,43 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+.login-input {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+  width: 12rem;
+  border-radius: 10px;
+}
+
+.login-input input {
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+.login-input svg {
+  cursor: pointer;
+}
+
+.button-container {
+  width: 12rem;
+  padding: 10px;
+  background: black;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.submit-button {
+  width: 100%;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
