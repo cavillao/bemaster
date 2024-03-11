@@ -5,8 +5,22 @@
   width: calc(20% - 20px);
   cursor: pointer;
   border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.categorie a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .categorie p {
   padding: 20px;
+  text-align: center;
+}
+
+.categorie-link {
+  width: 100%;
 }

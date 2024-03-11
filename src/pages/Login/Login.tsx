@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import './Login.css'
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { useState } from 'react';
+import './Login.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 function Login() {
-  const [showPassword, setShowPassword] = useState<boolean>(false)
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   return (
     <div className="login-container">
@@ -25,7 +25,7 @@ function Login() {
         <button className="submit-button">Iniciar Sesión</button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

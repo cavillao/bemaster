@@ -1,0 +1,39 @@
+{
+  "multimedia": [
+    {
+      "id": 1,
+      "title": "Prueba",
+      "url": "https://www.youtube.com/watch?v=wBUeg1Fed_o",
+      "category": "accion",
+      "resume": "dasdasdasdasdadasdasda"
+    },
+    {
+      "id": 1,
+      "title": "Prueba2",
+      "url": "https://www.youtube.com/watch?v=wBUeg1Fed_o",
+      "category": "accion",
+      "resume": "dasdasdasdasdadasdasda"
+    },
+    {
+      "id": 1,
+      "title": "Prueba3",
+      "url": "https://www.youtube.com/watch?v=wBUeg1Fed_o",
+      "category": "accion",
+      "resume": "dasdasdasdasdadasdasda"
+    },
+    {
+      "id": 1,
+      "title": "Prueba4",
+      "url": "https://www.youtube.com/watch?v=wBUeg1Fed_o",
+      "category": "accion",
+      "resume": "dasdasdasdasdadasdasda"
+    },
+    {
+      "id": 1,
+      "title": "Prueba5",
+      "url": "https://www.youtube.com/watch?v=wBUeg1Fed_o",
+      "category": "accion",
+      "resume": "dasdasdasdasdadasdasda"
+    }
+  ]
+}

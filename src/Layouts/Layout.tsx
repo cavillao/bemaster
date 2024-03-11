@@ -1,14 +1,14 @@
-import Navbar from '../components/Navbar/Navbar'
-import { ChildrenProp } from '../types/props'
+import './Layout.css';
+import Navbar from '../components/Navbar/Navbar';
+import { ChildrenProp } from '../types/props';
 
 function Layout({ children }: ChildrenProp) {
   return (
-    <>
-      <h1>Layout</h1>
+    <div className="layout">
       <Navbar />
-      <main>{children}</main>
-    </>
-  )
+      <main className="main-container">{children}</main>
+    </div>
+  );
 }
 
-export default Layout
+export default Layout;
