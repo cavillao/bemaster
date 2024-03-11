@@ -1,30 +1,86 @@
 import { useState } from 'react';
 import './Login.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [userNotLoggedIn, setUserNotLoggedIn] = useState<boolean | null>(null);
+
+  const navigate = useNavigate();
+
+  const formik = useFormik({
+    initialValues: {
+      username: '',
+      password: '',
+    },
+    validationSchema: Yup.object({
+      username: Yup.string()
+        .email()
+        .required('El nombre de usuario es obligatorio'),
+      password: Yup.string().required('La contraseña es obligatoria'),
+    }),
+    onSubmit: (values) => {
+      const usuario = { username: 'usuario@email.com', password: 'contraseña' };
+      if (
+        values.username === usuario.username &&
+        values.password === usuario.password
+      ) {
+        navigate('/');
+      } else {
+        setUserNotLoggedIn(true);
+      }
+    },
+  });
 
   return (
-    <div className="login-container">
+    <form className="login-container" onSubmit={formik.handleSubmit}>
+      {userNotLoggedIn && (
+        <div className="credentials-error">
+          <p>Usuario o Contraseña incorrectos</p>
+        </div>
+      )}
       <div className="login-input">
-        <input type="text" placeholder="Usuario" />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.username}
+          placeholder="Usuario"
+        />
+        {formik.errors.username && (
+          <div className="form-error">{formik.errors.username}</div>
+        )}
       </div>
       <div className="login-input">
         <input
           type={showPassword === false ? 'password' : 'text'}
           placeholder="Contraseña"
+          id="password"
+          name="password"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.password}
         />
         {showPassword === false ? (
           <FaEye onClick={() => setShowPassword(!showPassword)} />
         ) : (
           <FaEyeSlash onClick={() => setShowPassword(!showPassword)} />
         )}
+        {formik.errors.password && (
+          <div className="form-error">{formik.errors.password}</div>
+        )}
       </div>
       <div className="button-container">
-        <button className="submit-button">Iniciar Sesión</button>
+        <button type="submit" className="submit-button">
+          Iniciar Sesión
+        </button>
       </div>
-    </div>
+    </form>
   );
 }
 
