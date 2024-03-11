@@ -28,7 +28,7 @@ function Login() {
         values.username === usuario.username &&
         values.password === usuario.password
       ) {
-        navigate('/');
+        navigate('/home');
       } else {
         setUserNotLoggedIn(true);
       }

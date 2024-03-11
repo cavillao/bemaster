@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { useCategory } from './Contexts/CategoryContext';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Layout from './Layouts/Layout';
@@ -20,9 +25,10 @@ function App() {
     <>
       <Router>
         <Routes>
+          <Route path="/" element={<Navigate to={'/login'} />} />
           <Route path="/login" element={<Login />} />
           <Route
-            path="/"
+            path="/home"
             element={
               <Layout>
                 <Home />

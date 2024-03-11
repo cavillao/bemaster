@@ -7,7 +7,7 @@ function Navbar() {
       <nav className="navbar">
         <ul className="menu-options">
           <li>
-            <Link to={'/'}>Inicio</Link>
+            <Link to={'/home'}>Inicio</Link>
           </li>
           <li>Buscar</li>
           <li>Categorias</li>
