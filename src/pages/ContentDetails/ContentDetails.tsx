@@ -1,10 +1,6 @@
-import { useEffect } from 'react';
 import ReactPlayer from 'react-player';
 
 function ContentDetails({ videoSelected }: any) {
-  useEffect(() => {
-    console.log('video seleccionado', videoSelected);
-  });
   return (
     <>
       <h1>Detalles</h1>
