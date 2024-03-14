@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import usuarios from '../../data/usuarios.json';
 
 function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -23,11 +24,11 @@ function Login() {
       password: Yup.string().required('La contraseña es obligatoria'),
     }),
     onSubmit: (values) => {
-      const usuario = { username: 'usuario@email.com', password: 'contraseña' };
-      if (
-        values.username === usuario.username &&
-        values.password === usuario.password
-      ) {
+      const usuario = usuarios.users.find(
+        (user: any) =>
+          user.username === values.username && user.password === values.password
+      );
+      if (usuario) {
         navigate('/home');
       } else {
         setUserNotLoggedIn(true);

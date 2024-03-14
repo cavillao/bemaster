@@ -9,9 +9,9 @@ function Navbar() {
           <li>
             <Link to={'/home'}>Inicio</Link>
           </li>
-          <li>Buscar</li>
-          <li>Categorias</li>
-          <li>Series</li>
+          <li>
+            <Link to={'/categories'}>Categorias</Link>
+          </li>
         </ul>
       </nav>
     </>

@@ -20,3 +20,7 @@ export type Videos = {
 export type VideosProp = {
   videoSelected: Videos | null;
 };
+
+export type getVideoProp = {
+  getVideo: (video: Videos) => void;
+};

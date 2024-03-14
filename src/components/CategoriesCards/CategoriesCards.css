@@ -11,6 +11,11 @@
   align-content: center;
 }
 
+.categorie:hover {
+  border: solid 4px #2d7cfb;
+  border-radius: 10px;
+}
+
 .categorie a {
   color: #ffffff;
   text-decoration: none;

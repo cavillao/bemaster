@@ -4,6 +4,7 @@ import { Videos } from '../../interfaces/videos';
 import { useCategory } from '../../Contexts/CategoryContext';
 import './ContentCategory.css';
 import { Link } from 'react-router-dom';
+import { categoriesDataTitles } from '../../constants/categoriesData';
 
 function ContentCategory({ getVideo }: any) {
   const { selectedCategory } = useCategory();
@@ -15,12 +16,11 @@ function ContentCategory({ getVideo }: any) {
 
   useEffect(() => {
     setCategoryVideos(data.multimedia);
-    console.log(data.multimedia);
   }, []);
 
   return (
     <>
-      <h1>{selectedCategory}</h1>
+      <h1>{categoriesDataTitles[selectedCategory]}</h1>
       <div className="videos-container">
         {categoryVideos
           ?.filter(
@@ -30,7 +30,7 @@ function ContentCategory({ getVideo }: any) {
             <div key={index} onClick={() => sendVideo(video)}>
               <div className="video-image">
                 <Link to={`/${video.category}/${video.id.toString()}`}>
-                  Imagen
+                  Video Image
                 </Link>
               </div>
             </div>

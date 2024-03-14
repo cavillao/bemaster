@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCategory } from './Contexts/CategoryContext';
 import {
   BrowserRouter as Router,
@@ -11,6 +11,7 @@ import Home from './pages/Home/Home';
 import Layout from './Layouts/Layout';
 import ContentCategory from './pages/ContentCategory/ContentCategory';
 import ContentDetails from './pages/ContentDetails/ContentDetails';
+import AllCategories from './pages/AllCategories/AllCategories';
 import { Videos } from './interfaces/videos';
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
   const getVideo = (video: Videos) => {
     setVideoSelected(video);
   };
+
+  useEffect(() => {
+    console.log(selectedCategory);
+  });
 
   return (
     <>
@@ -44,10 +49,18 @@ function App() {
             }
           />
           <Route
-            path={`/${selectedCategory}/${videoSelected?.id.toString()}`}
+            path={`/${videoSelected?.category}/${videoSelected?.id.toString()}`}
             element={
               <Layout>
                 <ContentDetails videoSelected={videoSelected} />
+              </Layout>
+            }
+          />
+          <Route
+            path={'/categories'}
+            element={
+              <Layout>
+                <AllCategories getVideo={getVideo} />
               </Layout>
             }
           />
